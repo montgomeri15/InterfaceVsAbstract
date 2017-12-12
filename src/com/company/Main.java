@@ -6,11 +6,17 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Computer[] computers = new Computer[]{
+        Computer[] computers = new Computer[]{  //массив экземпляров класса, но можно использовать и 1
                 new Computer("Lenovo"), new Computer("MacBook")
         };
 
-        for (Computer computer : computers){
+        //Выведем параметры монитора (абстрактный класс):
+        Monitor monitor = new Monitor(13, 25);
+        monitor.getParameters();
+        System.out.println("Диагональ монитора = " + monitor.result() + "\n");
+
+
+        for (Computer computer : computers){  //перебираем, и по умолчанию компы включены
             computer.turnOn();
         }
 
